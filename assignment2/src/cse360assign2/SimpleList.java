@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 //Perla Martinez Lugo
 //Class ID: 222
-//Assignment 1
+//Assignment 2
 //This program creates a list and includes methods that keep up with the number of elements. 
 //This program allows the user to add a number to the list, search for a number and remove a number 
 //if found. It also has a method to print the list.
@@ -86,4 +86,26 @@ public class SimpleList {
 		return searchRemove;
 		
 	}
+	
+	public void append(int number) {
+		list[number]= list.length -1;
+	}
+	
+	public int first() {
+		int firstNumber = list[0];
+		return firstNumber;
+	}
+	
+	public void size() {
+		for(int index = 0; index < list.length; index++) {
+			if (list[index] == 0) {
+			
+			int sizeleft = 0;
+			sizeleft ++;
+
+			System.out.print(list.length - sizeleft);
+		}
+		
+	}
+}
 }
