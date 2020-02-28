@@ -1,5 +1,7 @@
 package cse360assign2;
 
+import java.util.Arrays;
+
 //Perla Martinez Lugo
 //Class ID: 222
 //Assignment 1
@@ -28,7 +30,9 @@ public class SimpleList {
 			for (int index = position; index > 0; index--) {
 				list[index + 1] = list[index];
 		if (position == 10){
-			list[position] = list[position - 1];
+		//	list[position] = list[position - 1];
+			int newsize = list.length + (list.length/2);
+			list = Arrays.copyOf(list, newsize);
 	
 		}
 	}}}
@@ -47,6 +51,10 @@ public class SimpleList {
 			for ( int index = position; index < count - 1; index++) {
 				list[index]= list[index + 1];
 			}
+		}
+		if (list.length < (list.length -(list.length * 0.25))) {
+			int decreaseSize = (int) (list.length - (list.length * 0.25));
+			list = Arrays.copyOf(list, decreaseSize);
 		}
 	}
 	
