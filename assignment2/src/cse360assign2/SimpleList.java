@@ -20,19 +20,19 @@ public class SimpleList {
 	public void add(int number) {
 		int position = list.length;
 		if (position == 0){
-			list[position] = number;
+			list[position] = number;  // adds a number at index 0
 			if ( position < 10) {
-			count++;
+			count++; // while index is not 10 it increases the count
 			}
 		}
 		
 		if (position > 0) {
 			for (int index = position; index > 0; index--) {
-				list[index + 1] = list[index];
+				list[index + 1] = list[index];  // moves the index over
 		if (position == 10){
 		//	list[position] = list[position - 1];
 			int newsize = list.length + (list.length/2);
-			list = Arrays.copyOf(list, newsize);
+			list = Arrays.copyOf(list, newsize); // increases the size of the list 50% of it's current length
 	
 		}
 	}}}
@@ -42,7 +42,7 @@ public class SimpleList {
 		int removeIndex = -1;
 		for ( int index = position; index < 0; index++) {
 			if(list[index]== number) {
-				removeIndex = index;
+				removeIndex = index;  //checks to see if number is located
 				
 						
 			}
@@ -52,19 +52,19 @@ public class SimpleList {
 				list[index]= list[index + 1];
 			}
 		}
-		if (list.length < (list.length -(list.length * 0.25))) {
+		if (list.length < (list.length -(list.length * 0.25))) {  // decreases the size of the list by 25% 
 			int decreaseSize = (int) (list.length - (list.length * 0.25));
 			list = Arrays.copyOf(list, decreaseSize);
 		}
 	}
 	
-	public int count() {
+	public int count() {  // returns count
 		return count;
 	}
 	
 	public String toString() {
 		String str = " ";
-		for (int index = 0; index < list.length; index++) {
+		for (int index = 0; index < list.length; index++) {   // prints list as a string
 			str += list[index];
 			
 					
@@ -78,7 +78,7 @@ public class SimpleList {
 		int searchRemove = -1;
 		int position = list.length;
 		
-		for (int index = 0; index < position; index++) {
+		for (int index = 0; index < position; index++) {  // searches for number in list
 			if (list[index] == number) {
 				searchRemove = index;
 			}
@@ -88,22 +88,23 @@ public class SimpleList {
 	}
 	
 	public void append(int number) {
-		list[number]= list.length -1;
+		
+		number = list.length -1; // inserts number at last index
 	}
 	
 	public int first() {
-		int firstNumber = list[0];
+		int firstNumber = list[0]; // returns the  number in index 0;
 		return firstNumber;
 	}
 	
 	public void size() {
-		for(int index = 0; index < list.length; index++) {
+		for(int index = 0; index < list.length; index++) {  
 			if (list[index] == 0) {
 			
-			int sizeleft = 0;
+			int sizeleft = 0;      // keeps track of the index that don't have a value
 			sizeleft ++;
 
-			System.out.print(list.length - sizeleft);
+			System.out.print(list.length - sizeleft); // prints out the number of index left.
 		}
 		
 	}
